@@ -1,0 +1,14 @@
+{
+  "companyfacts": {
+    "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000909832.json",
+    "bytes": 3694553,
+    "sha256": "b675ced201b27ede2b0d26ca6fd873befe96a1afa9679339a2d0b964187dcdff",
+    "fetched_utc": "2026-10-31T19:30:10+00:00"
+  },
+  "submissions": {
+    "url": "https://data.sec.gov/submissions/CIK0000909832.json",
+    "bytes": 159569,
+    "sha256": "8bae787cceecdd8dfa83dfc44c1cf8f826bed9e2ed35ec90aa1d00d52d42cc9e",
+    "fetched_utc": "2026-10-31T19:30:11+00:00"
+  }
+}

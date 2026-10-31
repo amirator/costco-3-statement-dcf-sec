@@ -1,2 +1,4 @@
-data/
+data/raw/companyfacts.json
+data/raw/submissions.json
 __pycache__/
+.pytest_cache/

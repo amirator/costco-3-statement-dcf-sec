@@ -1,9 +1,9 @@
 """Fetch SEC EDGAR XBRL company facts + submissions for Costco (CIK 909832). Writes data/raw + manifest."""
-import datetime as dt, hashlib, json, pathlib, sys, time
+import os, datetime as dt, hashlib, json, pathlib, sys, time
 import requests
 
 CIK = "0000909832"
-UA = {"User-Agent": "Amir Khan amirator@users.noreply.github.com"}  # SEC fair-access policy requires a contact UA
+UA = {"User-Agent": os.environ.get("SEC_UA", "Amir Khan amirator@outlook.com")}  # SEC fair-access policy: name + contact email
 URLS = {"companyfacts": f"https://data.sec.gov/api/xbrl/companyfacts/CIK{CIK}.json",
         "submissions": f"https://data.sec.gov/submissions/CIK{CIK}.json"}
 

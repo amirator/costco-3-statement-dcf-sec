@@ -1,0 +1,71 @@
+{
+  "company": "Costco Wholesale Corp",
+  "cik": "0000909832",
+  "hist_years": [
+    "FY2021",
+    "FY2022",
+    "FY2023",
+    "FY2024",
+    "FY2025",
+    "FY2026"
+  ],
+  "proj_years": [
+    "FY2027E",
+    "FY2028E",
+    "FY2029E",
+    "FY2030E",
+    "FY2031E"
+  ],
+  "fy_latest": "FY2026",
+  "revenue_latest_bn": 303.154,
+  "revenue_first_bn": 195.929,
+  "net_income_latest_bn": 9.226,
+  "ebit_margin_latest": 0.03854476602650798,
+  "special_dividend_years": [
+    "FY2021",
+    "FY2024"
+  ],
+  "hist_balance_max_abs_m": 0.0,
+  "proj_balance_max_abs": 2.288818359375e-05,
+  "drivers": {
+    "cagr_3y": 0.077562835315093,
+    "ebit_margin": 0.037586310699933366,
+    "da_pct_rev": 0.008808764285202726,
+    "capex_pct_rev": 0.019904262334526097,
+    "recv_pct_rev": 0.011796741388608143,
+    "inv_pct_rev": 0.06761532871206379,
+    "ap_pct_rev": 0.07424038290341034,
+    "tax_rate": 0.24729782482322069,
+    "interest_rate": 0.025380710659898477,
+    "dividend_payout": 0.26642098417515714,
+    "buyback_pct_ni": 0.0994759089788209
+  },
+  "assumptions": {
+    "years": 5,
+    "terminal_growth": 0.03,
+    "growth_fade_to": 0.04,
+    "risk_free": 0.043,
+    "equity_risk_premium": 0.05,
+    "beta": 0.8,
+    "pre_tax_cost_of_debt": 0.04,
+    "debt_weight": 0.02
+  },
+  "wacc": 0.08194216174014143,
+  "revenue_proj_final_bn": 403.2032396025104,
+  "pv_fcff": 23648471836.47331,
+  "terminal_value": 135897243754.51306,
+  "pv_terminal": 91662231053.31058,
+  "enterprise_value": 115310702889.78389,
+  "equity_value": 131603702889.78389,
+  "per_share": 296.1199542102165,
+  "tv_share_of_ev": 0.7949152052340106,
+  "fcff_proj_bn": [
+    4.619886599,
+    5.885081025,
+    6.246879301,
+    6.57236351,
+    6.853200597
+  ],
+  "sens_min": 229.3690206426352,
+  "sens_max": 446.67094453413324
+}
