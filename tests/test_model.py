@@ -50,3 +50,12 @@ def test_extract_synthetic():
 def test_readme_in_sync():
     k = json.loads((ROOT / "reports/kpis.json").read_text())
     assert (ROOT / "README.md").read_text() == render(k)
+
+
+def test_fetch_requires_sec_ua(monkeypatch):
+    import importlib.util
+    monkeypatch.delenv("SEC_UA", raising=False)
+    spec = importlib.util.spec_from_file_location("fetch_sec", ROOT / "ingest/fetch_sec.py")
+    mod = importlib.util.module_from_spec(spec); spec.loader.exec_module(mod)
+    with pytest.raises(SystemExit):
+        mod.main("/tmp/never")

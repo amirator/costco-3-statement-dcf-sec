@@ -10,7 +10,7 @@ FP&A and corporate-finance roles expect you to build a three-statement model tha
 ## Data
 - **SEC EDGAR XBRL Company Facts API**, CIK 0000909832: `https://data.sec.gov/api/xbrl/companyfacts/CIK0000909832.json`. Only 10-K facts are used, and where a figure was restated, the latest filing wins.
 - Historical years: FY2021 to FY2026 (Costco's fiscal year ends around 1 September).
-- `data/facts_fy.csv` is the tidy extract (22 line items × 6 years, each with the us-gaap tag it came from). The raw JSON is git-ignored, and `ingest/fetch_sec.py` re-downloads it with the SEC-required contact User-Agent.
+- `data/facts_fy.csv` is the tidy extract (22 line items × 6 years, each with the us-gaap tag it came from). The raw JSON is git-ignored, and `ingest/fetch_sec.py` re-downloads it. SEC requires a contact User-Agent, so set the `SEC_UA` environment variable (e.g. `SEC_UA='Your Name your@email.com'`) first; the script refuses to run with the placeholder.
 
 ## Method
 1. `src/extract.py` maps us-gaap tags to line items and keeps full-year (350–380 day) flows and year-end instants.
@@ -42,7 +42,7 @@ Three-statement linkage (IS → CF → BS), DCF/FCFF, WACC/CAPM, sensitivity ana
 ## How to run
 ```bash
 pip install -r requirements.txt
-python ingest/fetch_sec.py        # optional: refresh raw EDGAR JSON (needs SEC-allowed network)
+SEC_UA='Your Name your@email.com' python ingest/fetch_sec.py   # optional: refresh raw EDGAR JSON
 python src/extract.py             # -> data/facts_fy.csv
 python src/model.py && python src/excel.py && python src/readme.py
 python -m pytest -q

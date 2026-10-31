@@ -3,11 +3,15 @@ import os, datetime as dt, hashlib, json, pathlib, sys, time
 import requests
 
 CIK = "0000909832"
-UA = {"User-Agent": os.environ.get("SEC_UA", "Amir Khan amirator@outlook.com")}  # SEC fair-access policy: name + contact email
+PLACEHOLDER = "Your Name your@email.com"
+# SEC fair-access policy requires a real "Name email" User-Agent; set SEC_UA before fetching.
+UA = {"User-Agent": os.environ.get("SEC_UA", PLACEHOLDER)}
 URLS = {"companyfacts": f"https://data.sec.gov/api/xbrl/companyfacts/CIK{CIK}.json",
         "submissions": f"https://data.sec.gov/submissions/CIK{CIK}.json"}
 
 def main(out="data/raw"):
+    if UA["User-Agent"] == PLACEHOLDER:
+        sys.exit("Set SEC_UA to your name and contact email, e.g. SEC_UA='Jane Doe jane@example.com'")
     out = pathlib.Path(out); out.mkdir(parents=True, exist_ok=True); man = {}
     for name, url in URLS.items():
         r = requests.get(url, headers=UA, timeout=120); r.raise_for_status()
